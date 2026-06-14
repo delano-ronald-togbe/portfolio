@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Honoraires, factures et configuration — Portfolio Delano Ronald Togbé"
+  },
+
+  "rates": {
+    "currency": "EUR",
+    "currency_symbol": "€",
+    "secondary_currency": "XOF",
+    "conversion_rate_eur_xof": 655.957,
+    "updated": "2026-02-13",
+    "display_note": "Les tarifs sont indicatifs et peuvent être négociés selon la nature et la durée de la mission.",
+
+    "packages": [
+      {
+        "id": "R001",
+        "name": "Consultation ponctuelle",
+        "type": "hourly",
+        "amount": 45,
+        "unit": "heure",
+        "description": "Conseil méthodologique, revue de modèles statistiques, orientation d'analyses.",
+        "features": [
+          "Appel ou réunion Zoom/Teams",
+          "Retour écrit synthétique",
+          "1 révision incluse",
+          "Délai : sous 48h"
+        ],
+        "featured": false,
+        "note": ""
+      },
+      {
+        "id": "R002",
+        "name": "Mission courte",
+        "type": "daily",
+        "amount": 280,
+        "unit": "jour",
+        "description": "Analyse de données, nettoyage de bases, modélisation, production de rapports.",
+        "features": [
+          "Jusqu'à 8h de travail effectif",
+          "Rapport ou script commenté",
+          "2 révisions incluses",
+          "Communication continue",
+          "Fichiers sources R/Python"
+        ],
+        "featured": true,
+        "note": "Tarif journalier le plus demandé"
+      },
+      {
+        "id": "R003",
+        "name": "Mission longue (>5 jours)",
+        "type": "project",
+        "amount": 220,
+        "unit": "jour",
+        "description": "Projets complets : conception DOE, collecte, analyse, publication. Tarif dégressif.",
+        "features": [
+          "Devis personnalisé",
+          "Plan d'analyse détaillé",
+          "Réunions de suivi incluses",
+          "Livraison R Markdown / Quarto",
+          "Révisions illimitées",
+          "Support post-livraison (2 sem.)"
+        ],
+        "featured": false,
+        "note": "Réduction de 20% dès 10 jours"
+      },
+      {
+        "id": "R004",
+        "name": "Formation / Atelier",
+        "type": "session",
+        "amount": 380,
+        "unit": "demi-journée",
+        "description": "Formation sur mesure en biostatistique, R, Python, MLOps ou méthodes mixtes.",
+        "features": [
+          "Support pédagogique inclus",
+          "Exercices pratiques",
+          "Données d'exemple réelles",
+          "Jusqu'à 10 participants",
+          "Distanciel ou présentiel"
+        ],
+        "featured": false,
+        "note": ""
+      }
+    ]
+  },
+
+  "invoice_settings": {
+    "issuer": {
+      "name": "Tognizo Delano Ronald Togbé",
+      "title": "Consultant Biostatisticien & Data Scientist",
+      "address": "Quartier Fifonsi (Djadjo), Maison Togbé, Lot 45AD\n940 Abomey-Calavi, Bénin",
+      "phone": "(+229) 01 97 56 90 35",
+      "email": "delanodray@gmail.com",
+      "website": "https://tdr12.github.io/portfolio",
+      "vat_number": "",
+      "siret": "",
+      "bank": ""
+    },
+    "defaults": {
+      "payment_terms_days": 30,
+      "currency": "EUR",
+      "vat_rate": 0,
+      "vat_label": "Exonéré de TVA (auto-entrepreneur / consultant)",
+      "footer_note": "Merci de votre confiance. Paiement par virement bancaire ou Mobile Money.",
+      "invoice_prefix": "DRTA",
+      "next_number": 1
+    }
+  },
+
+  "invoices": []
+}

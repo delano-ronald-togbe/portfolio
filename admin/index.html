@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Portfolio Delano R. Togbé</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+<!-- Nav admin -->
+<nav class="admin-nav">
+  <div class="admin-nav-logo">
+    <span>⚙</span>
+    <span>Admin — dr_togbe.R</span>
+    <span class="admin-badge-nav">ADMIN</span>
+  </div>
+  <div class="admin-user-info">
+    <span id="session-time" style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);"></span>
+    <a href="../index.html" class="btn btn-ghost btn-sm">← Site public</a>
+    <button class="btn btn-danger btn-sm" onclick="Auth.logout(); window.location.href='login.html'">Déconnexion</button>
+  </div>
+</nav>
+
+<!-- Wrapper principal -->
+<div class="admin-wrapper">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-section">
+      <span class="sidebar-label">Vue d'ensemble</span>
+      <button class="sidebar-link active" data-section="dashboard">
+        <span class="sidebar-icon">📊</span> Tableau de bord
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Contenu</span>
+      <button class="sidebar-link" data-section="projects">
+        <span class="sidebar-icon">🗂</span> Projets
+      </button>
+      <button class="sidebar-link" data-section="articles">
+        <span class="sidebar-icon">📝</span> Articles &amp; Blog
+      </button>
+      <button class="sidebar-link" data-section="figures">
+        <span class="sidebar-icon">📈</span> Figures
+      </button>
+      <button class="sidebar-link" data-section="reports">
+        <span class="sidebar-icon">📋</span> Rapports
+      </button>
+      <button class="sidebar-link" data-section="publications">
+        <span class="sidebar-icon">📚</span> Publications
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Facturation</span>
+      <button class="sidebar-link" data-section="rates">
+        <span class="sidebar-icon">💰</span> Honoraires
+      </button>
+      <button class="sidebar-link" data-section="invoices">
+        <span class="sidebar-icon">📄</span> Factures
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Configuration</span>
+      <button class="sidebar-link" data-section="settings">
+        <span class="sidebar-icon">⚙</span> Paramètres
+      </button>
+    </div>
+
+    <div style="padding:1.2rem;margin-top:auto;">
+      <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);line-height:1.7;background:rgba(246,201,14,0.06);border:1px solid rgba(246,201,14,0.15);border-radius:4px;padding:0.7rem;">
+        <strong style="color:var(--gold);">GitHub Pages</strong><br>
+        Après chaque modification :<br>
+        1. Exporter les JSON<br>
+        2. git add data/*.json<br>
+        3. git commit -m "update"<br>
+        4. git push
+      </div>
+    </div>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="admin-content">
+    <div class="admin-header">
+      <h1 id="admin-page-title">Tableau de bord</h1>
+      <div style="font-size:0.78rem;color:var(--text-muted);font-family:var(--font-mono);">
+        Portfolio Delano R. Togbé · v1.0
+      </div>
+    </div>
+
+    <div id="admin-main">
+      <!-- Contenu chargé dynamiquement par admin-app.js -->
+      <div style="color:var(--slate);font-family:var(--font-mono);">Chargement...</div>
+    </div>
+  </main>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="admin-toast"></div>
+
+<!-- Scripts -->
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/db.js"></script>
+<script src="../assets/js/invoice.js"></script>
+<script src="../assets/js/admin-app.js"></script>
+</body>
+</html>

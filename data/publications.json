@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Publications, figures et rapports — Portfolio Delano Ronald Togbé"
+  },
+
+  "publications": [
+    {
+      "id": "PUB001",
+      "year": "2023",
+      "title": "Interactions entre Nesidiocoris tenuis (Reuter) et les ravageurs de la tomate Helicoverpa armigera et Phthorimaea absoluta : prédation, phytophagie et préférence de proie",
+      "authors": ["Totin F.", "Sinzogan A.", "Togbe D.R.", "Karlsson M.F."],
+      "myAuthorIndex": 2,
+      "journal": "Entomologia Experimentalis et Applicata",
+      "doi": "",
+      "link": "",
+      "type": "article",
+      "status": "published"
+    },
+    {
+      "id": "PUB002",
+      "year": "2023",
+      "title": "The effectiveness of consistent roguing in managing banana bunchy top disease in smallholder production in Africa",
+      "authors": ["Omondi B.A.", "Soko M.M.", "Nduwimana I.", "Togbé D.R.", "Niyongere C.", "Simbare A.", "Kachigamba D.", "Staver C."],
+      "myAuthorIndex": 3,
+      "journal": "Plant Disease / CGIAR",
+      "doi": "",
+      "link": "",
+      "type": "article",
+      "status": "published"
+    },
+    {
+      "id": "PUB003",
+      "year": "2019",
+      "title": "Habitat factors associated with Fopius caudatus parasitism and population level of its host, Ceratitis cosyra",
+      "authors": ["Mama Sambo S.", "Togbé D.R.", "Sinzogan A.A.", "Adomou A.", "Bokonon-Ganta H.A.", "Karlsson M.F."],
+      "myAuthorIndex": 1,
+      "journal": "Entomologia Experimentalis et Applicata",
+      "doi": "10.1111/eea.12748",
+      "link": "https://doi.org/10.1111/eea.12748",
+      "type": "article",
+      "status": "published"
+    },
+    {
+      "id": "PUB004",
+      "year": "2017",
+      "title": "Comparison of Bayesian and Frequentist Hierarchical Linear Model (HLM)",
+      "authors": ["Togbe Delano Tognizo Ronald"],
+      "myAuthorIndex": 0,
+      "journal": "Mémoire de Master en Biostatistique — Université d'Abomey-Calavi / LABEF",
+      "doi": "",
+      "link": "",
+      "type": "thesis",
+      "status": "published"
+    }
+  ],
+
+  "figures": [
+    {
+      "id": "FIG001",
+      "title": "Exemple — Carte de risque diarrhéique par krigeage",
+      "description": "Carte interpolée par krigeage ordinaire représentant l'incidence prédite des maladies diarrhéiques selon la qualité de l'eau (E. coli) sur 50 sites de monitoring.",
+      "type": "map",
+      "project": "P001",
+      "image": "",
+      "link": "",
+      "status": "placeholder"
+    }
+  ],
+
+  "reports": [
+    {
+      "id": "REP001",
+      "title": "Rapport d'analyse typologique — Adoption SRI, GIZ Bénin",
+      "type": "Rapport technique",
+      "year": "2023",
+      "client": "GIZ",
+      "description": "Typology of farmers adopting the Intensive Rice System: clustering analysis, logistic regression and key determinants.",
+      "confidentiality": "Résumé seulement",
+      "link": "",
+      "status": "published"
+    },
+    {
+      "id": "REP002",
+      "title": "Plan d'échantillonnage — Cartographie mécanisation agricole (SoNaMa)",
+      "type": "Note méthodologique",
+      "year": "2022",
+      "client": "SoNaMa",
+      "description": "Conception du plan de sondage pour le recensement national des équipements de mécanisation agricole, avec estimation des effectifs et calcul des marges d'erreur.",
+      "confidentiality": "Résumé seulement",
+      "link": "",
+      "status": "published"
+    }
+  ]
+}

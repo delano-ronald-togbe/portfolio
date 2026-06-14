@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Delano Ronald Togbé — Biostatisticien & Data Scientist, consultant en analyse de données pour la recherche agronomique, santé publique et écologie en Afrique.">
+<meta name="author" content="Tognizo Delano Ronald Togbé">
+<meta property="og:title" content="Delano Ronald Togbé | Biostatisticien & Data Scientist">
+<meta property="og:description" content="Consultant spécialisé en biostatistique, analyse spatiale, modélisation mixte et MLOps — Abomey-Calavi, Bénin.">
+<title>Delano Ronald Togbé | Biostatisticien & Data Scientist</title>
+
+<!-- Fonts (Google Fonts — gratuit) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<style>
+  /* Terminal syntax colors */
+  .tc  { color: #4A6741; }   /* comment */
+  .tk  { color: #C678DD; }   /* keyword */
+  .ts  { color: #98C379; }   /* string */
+  .tn  { color: #E5C07B; }   /* number */
+  .tf  { color: #61AFEF; }   /* function */
+  .tv  { color: #E06C75; }   /* variable */
+  .tp  { color: #2ECC71; }   /* prompt */
+  .to  { color: #ABB2BF; }   /* output */
+
+  /* Invoice section */
+  .invoice-form-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+  }
+  #inv-items td { padding: 0.4rem; vertical-align: middle; }
+  #inv-items input, #inv-items select { padding: 0.4rem 0.6rem; font-size: 0.82rem; }
+
+  /* Rates note */
+  #rates-note { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 1.5rem; font-style: italic; }
+
+  /* Section backgrounds alternées */
+  #about       { background: var(--navy-mid); }
+  #projects    { background: var(--navy); }
+  #articles    { background: var(--navy-mid); }
+  #rates       { background: var(--navy); }
+  #invoice-section { background: var(--navy-mid); }
+  #publications{ background: var(--navy); }
+  #contact     { background: var(--navy-mid); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-logo">dr<span>_</span>togbe<span>.R</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#rates">Honoraires</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#invoice-section" class="btn btn-outline btn-sm">📄 Devis</a>
+    <a href="#contact" class="btn btn-primary btn-sm">Me contacter</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Biostatisticien &amp; Data Scientist</div>
+    <h1 class="hero-name">Delano Ronald<br><span class="accent">Togbé</span></h1>
+    <p class="hero-subtitle">
+      Transformer des données complexes en décisions éclairées — pour la recherche agronomique, la santé publique, l'écologie et le développement durable en Afrique.
+    </p>
+    <div class="hero-tags">
+      <span class="tag tag-emerald">R / Python</span>
+      <span class="tag tag-emerald">GLM / GLMM</span>
+      <span class="tag tag-emerald">Time Series</span>
+      <span class="tag tag-emerald">Spatial Analysis</span>
+      <span class="tag tag-emerald">Machine Learning</span>
+      <span class="tag tag-emerald">MLOps / DevOps</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary btn-lg">Voir les projets</a>
+      <a href="#invoice-section" class="btn btn-outline btn-lg">📄 Demander un devis</a>
+    </div>
+  </div>
+
+  <!-- Terminal animé -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="tdot tdot-r"></div>
+      <div class="tdot tdot-y"></div>
+      <div class="tdot tdot-g"></div>
+      <span class="terminal-title">togbe_portfolio.R</span>
+    </div>
+    <div class="terminal-body" id="terminal-body"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     STATS BAR
+══════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-counter data-target="6">6<span class="plus">+</span></div>
+    <div class="stat-label">Années d'expérience</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-counter data-target="4">4</div>
+    <div class="stat-label">Publications scientifiques</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-counter data-target="9">9<span class="plus">+</span></div>
+    <div class="stat-label">Projets de consulting</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-counter data-target="6">6</div>
+    <div class="stat-label">Pays couverts</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="about-grid">
+    <!-- Photo -->
+    <div class="about-visual" style="position:relative;">
+      <div class="about-photo" id="about-photo">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.3;">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);">Photo du profil</span>
+        <span style="font-size:0.68rem;color:var(--text-muted);">Remplacer dans /assets/images/profile/</span>
+      </div>
+      <div class="about-badge">
+        <span class="years">6+</span>
+        ans d'expertise
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="about-content">
+      <div class="section-eyebrow">À propos</div>
+      <h2 class="section-title">Statistiques au<br>service du terrain</h2>
+      <p>Biostatisticien et Agronome de formation (Université d'Abomey-Calavi), je me spécialise dans l'analyse statistique avancée et la data science appliquées aux problématiques de recherche scientifique, de santé publique et de développement durable en Afrique subsaharienne.</p>
+      <p>Fort d'expériences avec le <strong style="color:var(--white);">CIRAD</strong>, l'<strong style="color:var(--white);">Alliance of Bioversity &amp; CIAT</strong>, l'<strong style="color:var(--white);">IITA</strong> et la <strong style="color:var(--white);">GIZ</strong>, j'accompagne chercheurs, ONG et acteurs privés dans la transformation de leurs données en connaissances actionnables.</p>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Statistiques</h4>
+          <div class="skill-tags">
+            <span class="tag tag-slate">GLM / GLMM</span>
+            <span class="tag tag-slate">GAM</span>
+            <span class="tag tag-slate">ARIMA</span>
+            <span class="tag tag-slate">DiD / PSM</span>
+            <span class="tag tag-slate">HLM Bayésien</span>
+            <span class="tag tag-slate">Survie (KM)</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Outils</h4>
+          <div class="skill-tags">
+            <span class="tag tag-slate">R / Tidyverse</span>
+            <span class="tag tag-slate">Python</span>
+            <span class="tag tag-slate">QGIS</span>
+            <span class="tag tag-slate">SQL</span>
+            <span class="tag tag-slate">Docker</span>
+            <span class="tag tag-slate">Git / CI-CD</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Domaines</h4>
+          <div class="skill-tags">
+            <span class="tag tag-slate">Agronomie</span>
+            <span class="tag tag-slate">Épidémiologie</span>
+            <span class="tag tag-slate">Écologie</span>
+            <span class="tag tag-slate">Santé publique</span>
+            <span class="tag tag-slate">Climat</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>MLOps / DevOps</h4>
+          <div class="skill-tags">
+            <span class="tag tag-slate">Kubernetes</span>
+            <span class="tag tag-slate">Spark</span>
+            <span class="tag tag-slate">Databricks</span>
+            <span class="tag tag-slate">AWS</span>
+            <span class="tag tag-slate">PowerBI</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/delano-ronald-togbe-8b3b4985/" target="_blank" class="btn btn-outline btn-sm">LinkedIn ↗</a>
+        <a href="https://github.com/tdr12" target="_blank" class="btn btn-outline btn-sm">GitHub ↗</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Télécharger le CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROJETS
+══════════════════════════════════ -->
+<section id="projects" class="section">
+  <div class="section-eyebrow">Projets &amp; Analyses</div>
+  <h2 class="section-title">Études de cas sélectionnées</h2>
+  <p class="section-sub">Des interventions méthodologiques rigoureuses sur des problématiques réelles à fort impact en Afrique subsaharienne.</p>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="epidemio">Épidémiologie</button>
+    <button class="filter-btn" data-filter="agro">Agronomie</button>
+    <button class="filter-btn" data-filter="ecology">Écologie</button>
+    <button class="filter-btn" data-filter="ml">ML / DevOps</button>
+    <button class="filter-btn" data-filter="social">Sciences sociales</button>
+  </div>
+
+  <div class="grid-auto" id="projects-grid">
+    <div style="color:var(--slate);padding:2rem;font-family:var(--font-mono);font-size:0.85rem;">Chargement des projets...</div>
+  </div>
+</section>
+
+<!-- Modal projet -->
+<div class="modal-overlay" id="project-modal">
+  <div class="modal" style="max-width:640px;">
+    <button class="modal-close">✕</button>
+    <div class="tag tag-emerald" id="pm-cat" style="margin-bottom:1rem;"></div>
+    <h2 id="pm-title" style="font-size:1.3rem;color:var(--white);margin-bottom:1rem;line-height:1.35;"></h2>
+    <p id="pm-desc" style="color:var(--slate);font-size:0.9rem;line-height:1.75;margin-bottom:1.2rem;"></p>
+    <div id="pm-tools" style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;"></div>
+    <div id="pm-meta" style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-bottom:1.5rem;"></div>
+    <a id="pm-link" href="#" target="_blank" class="btn btn-outline btn-sm" style="display:none;">Voir la publication ↗</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     ARTICLES
+══════════════════════════════════ -->
+<section id="articles" class="section">
+  <div class="section-eyebrow">Blog &amp; Ressources</div>
+  <h2 class="section-title">Articles &amp; Notes d'analyse</h2>
+  <p class="section-sub">Réflexions méthodologiques, tutoriels et retours d'expérience du terrain — en R, Python et au-delà.</p>
+
+  <div class="articles-layout">
+    <!-- Article vedette -->
+    <div class="article-featured" id="featured-article">
+      <div class="article-fig">
+        <img src="" alt="" id="feat-img" style="display:none;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(143,163,177,0.25)" stroke-width="1.5" id="feat-placeholder">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <span class="tag tag-emerald" id="feat-tag">Méthodologie</span>
+      <h3 id="feat-title" style="margin:0.6rem 0;">Chargement...</h3>
+      <p id="feat-desc"></p>
+      <div class="article-meta" id="feat-meta"></div>
+    </div>
+
+    <!-- Liste articles -->
+    <div class="articles-list" id="articles-list">
+      <div style="color:var(--slate);font-size:0.85rem;">Chargement...</div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;text-align:center;">
+    <a href="pages/articles.html" class="btn btn-outline">Voir tous les articles</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     HONORAIRES
+══════════════════════════════════ -->
+<section id="rates" class="section">
+  <div class="section-eyebrow">Honoraires</div>
+  <h2 class="section-title">Tarifs de consulting</h2>
+  <p class="section-sub">Des tarifs transparents adaptés à la nature de chaque mission, avec possibilité de devis personnalisé.</p>
+
+  <div class="rates-grid" id="rates-grid">
+    <div style="color:var(--slate);padding:2rem;font-family:var(--font-mono);">Chargement des tarifs...</div>
+  </div>
+
+  <p id="rates-note"></p>
+</section>
+
+<!-- ══════════════════════════════════
+     FACTURE PRO FORMA
+══════════════════════════════════ -->
+<section id="invoice-section" class="section">
+  <div class="section-eyebrow">Facturation</div>
+  <h2 class="section-title">Générer une facture pro forma</h2>
+  <p class="section-sub">Remplissez le formulaire ci-dessous pour obtenir une facture pro forma téléchargeable et imprimable instantanément.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+    <!-- Informations client -->
+    <div class="card">
+      <h3 style="color:var(--white);margin-bottom:1.5rem;font-size:1rem;">1. Informations client</h3>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="form-group">
+          <label>Nom complet *</label>
+          <input type="text" id="inv-client-name" placeholder="Nom du client ou de l'organisation">
+        </div>
+        <div class="form-group">
+          <label>Organisation</label>
+          <input type="text" id="inv-client-org" placeholder="Nom de l'institution / entreprise">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="inv-client-email" placeholder="email@organisation.org">
+        </div>
+        <div class="form-group">
+          <label>Adresse</label>
+          <textarea id="inv-client-addr" placeholder="Adresse postale" style="min-height:60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Délai de paiement (jours)</label>
+          <select id="inv-terms">
+            <option value="15">15 jours</option>
+            <option value="30" selected>30 jours</option>
+            <option value="45">45 jours</option>
+            <option value="60">60 jours</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Notes / Conditions particulières</label>
+          <textarea id="inv-notes" placeholder="Remarques, conditions spéciales..." style="min-height:60px;"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prestations -->
+    <div class="card">
+      <h3 style="color:var(--white);margin-bottom:1.5rem;font-size:1rem;">2. Prestations</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);">
+              <th style="text-align:left;padding:0.4rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">Description</th>
+              <th style="text-align:center;padding:0.4rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">Qté</th>
+              <th style="padding:0.4rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">Unité</th>
+              <th style="text-align:right;padding:0.4rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">P.U. (€)</th>
+              <th style="text-align:right;padding:0.4rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="inv-items"></tbody>
+        </table>
+      </div>
+
+      <button id="add-item-btn" class="btn btn-ghost btn-sm" style="margin-top:0.8rem;">+ Ajouter une ligne</button>
+
+      <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--border);text-align:right;">
+        <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--slate);margin-bottom:0.3rem;">TOTAL TTC</div>
+        <div style="font-family:var(--font-mono);font-size:1.6rem;font-weight:600;color:var(--emerald-bright);" id="inv-total">€ 0,00</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);" id="inv-total-xof">≈ 0 XOF</div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <button id="generate-invoice-btn" class="btn btn-primary btn-full btn-lg">
+          📄 Générer la facture pro forma
+        </button>
+        <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.6rem;">
+          S'ouvre dans un nouvel onglet · Imprimable en PDF via le navigateur
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PUBLICATIONS
+══════════════════════════════════ -->
+<section id="publications" class="section">
+  <div class="section-eyebrow">Publications</div>
+  <h2 class="section-title">Travaux scientifiques</h2>
+  <p class="section-sub">Articles publiés dans des revues internationales à comité de lecture et mémoires académiques.</p>
+
+  <div class="pub-list" id="pub-list">
+    <div style="color:var(--slate);padding:2rem;font-family:var(--font-mono);">Chargement...</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="section-eyebrow">Contact</div>
+  <h2 class="section-title">Travaillons ensemble</h2>
+
+  <div class="contact-grid">
+    <!-- Infos -->
+    <div class="contact-info">
+      <p>Disponible pour des missions de consulting en analyse de données, biostatistique et MLOps — localement au Bénin et à distance pour tout projet international. Langues de travail : <strong style="color:var(--white);">Français</strong> et <strong style="color:var(--white);">Anglais (B2)</strong>.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:delanodray@gmail.com">
+          <div class="contact-icon">✉</div>
+          <div><div>delanodray@gmail.com</div><div style="font-size:0.72rem;color:var(--text-muted);">Email principal</div></div>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/delano-ronald-togbe-8b3b4985/" target="_blank">
+          <div class="contact-icon" style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;">in</div>
+          <div><div>LinkedIn</div><div style="font-size:0.72rem;color:var(--text-muted);">Delano Ronald Togbé</div></div>
+        </a>
+        <a class="contact-link" href="https://github.com/tdr12" target="_blank">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div><div>github.com/tdr12</div><div style="font-size:0.72rem;color:var(--text-muted);">Code & projets</div></div>
+        </a>
+        <a class="contact-link" href="https://wa.me/22997569035" target="_blank">
+          <div class="contact-icon">📱</div>
+          <div><div>+229 97 56 90 35</div><div style="font-size:0.72rem;color:var(--text-muted);">WhatsApp</div></div>
+        </a>
+        <div class="contact-link" style="cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div><div>Abomey-Calavi, Bénin</div><div style="font-size:0.72rem;color:var(--text-muted);">Télétravail possible partout</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-box">
+      <h3>Envoyer un message</h3>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nom complet *</label>
+            <input type="text" id="c-name" placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="c-email" placeholder="votre@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Objet</label>
+          <select id="c-subject">
+            <option>Mission de consulting</option>
+            <option>Collaboration de recherche</option>
+            <option>Formation / Atelier</option>
+            <option>Question méthodologique</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea id="c-message" placeholder="Décrivez votre projet ou votre demande..." style="min-height:110px;"></textarea>
+        </div>
+        <button id="contact-form-btn" class="btn btn-primary btn-full">Envoyer le message</button>
+        <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;">Ouvre votre client mail. Réponse sous 48h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-logo"><strong>Delano R. Togbé</strong> · Biostatisticien &amp; Data Scientist · Abomey-Calavi, Bénin</div>
+  <ul class="footer-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#rates">Honoraires</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="admin/login.html" style="color:rgba(143,163,177,0.4);">Admin</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 · Tous droits réservés</div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<!-- ══════════════════════════════════
+     SCRIPTS
+══════════════════════════════════ -->
+<script src="assets/js/db.js"></script>
+<script src="assets/js/invoice.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

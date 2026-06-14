@@ -1,0 +1,147 @@
+/* ============================================================
+   ADMIN — Styles spécifiques au panneau d'administration
+   ============================================================ */
+
+/* ── Login page ── */
+.login-page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(39,174,96,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(246,201,14,0.04) 0%, transparent 40%);
+}
+
+.login-box {
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  width: 100%; max-width: 400px;
+  text-align: center;
+}
+
+.login-logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem; color: var(--emerald-bright); margin-bottom: 0.5rem;
+}
+.login-logo span { color: var(--gold); }
+
+.login-subtitle { font-size: 0.82rem; color: var(--slate); margin-bottom: 2rem; }
+
+.login-box h2 {
+  font-family: var(--font-serif); font-size: 1.4rem;
+  color: var(--white); margin-bottom: 1.8rem;
+}
+
+.login-form { display: flex; flex-direction: column; gap: 1.2rem; text-align: left; }
+
+.login-hint {
+  font-size: 0.75rem; color: var(--text-muted);
+  margin-top: 1.5rem; line-height: 1.6;
+  background: rgba(246,201,14,0.07);
+  border: 1px solid rgba(246,201,14,0.15);
+  border-radius: var(--radius-sm); padding: 0.8rem;
+}
+
+.login-error {
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.3);
+  color: #FF6B6B; border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem; font-size: 0.83rem;
+  display: none;
+}
+.login-error.show { display: block; }
+
+/* ── Admin nav ── */
+.admin-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--navy-mid);
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+
+.admin-nav-logo {
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold);
+  display: flex; align-items: center; gap: 0.6rem;
+}
+
+.admin-badge-nav {
+  font-size: 0.6rem;
+  background: rgba(246,201,14,0.15); color: var(--gold);
+  border: 1px solid rgba(246,201,14,0.3); border-radius: 20px;
+  padding: 0.2rem 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+.admin-user-info {
+  display: flex; align-items: center; gap: 1rem; font-size: 0.82rem; color: var(--slate);
+}
+
+/* ── Content panels ── */
+.panel-section {
+  animation: fadeInUp 0.3s ease;
+}
+
+.panel-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.panel-header h2 { font-size: 1.3rem; color: var(--white); }
+
+/* ── Content row actions ── */
+.action-btns { display: flex; gap: 0.4rem; }
+.action-edit   { color: var(--emerald-bright); background: rgba(39,174,96,0.1); border: 1px solid rgba(39,174,96,0.2); }
+.action-delete { color: #FF6B6B; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); }
+.action-edit:hover   { background: rgba(39,174,96,0.2); }
+.action-delete:hover { background: rgba(231,76,60,0.2); }
+
+/* ── Status badges ── */
+.status-pub    { color: var(--emerald-bright); }
+.status-draft  { color: var(--gold); }
+.status-hidden { color: var(--text-muted); }
+
+/* ── Settings ── */
+.settings-section { margin-bottom: 2.5rem; }
+.settings-section h3 { font-size: 1rem; color: var(--white); font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+.setting-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.7rem 0; border-bottom: 1px solid rgba(143,163,177,0.06);
+}
+.setting-label { font-size: 0.88rem; color: var(--slate); }
+.setting-desc  { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ── Toggle switch ── */
+.toggle {
+  position: relative; width: 42px; height: 22px;
+}
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-slider {
+  position: absolute; inset: 0;
+  background: var(--navy-light); border: 1px solid var(--border);
+  border-radius: 22px; cursor: pointer; transition: all var(--transition);
+}
+.toggle-slider::before {
+  content: ''; position: absolute;
+  width: 16px; height: 16px; left: 2px; top: 2px;
+  background: var(--slate); border-radius: 50%; transition: all var(--transition);
+}
+.toggle input:checked + .toggle-slider { background: var(--emerald); border-color: var(--emerald); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(20px); background: var(--white); }
+
+/* ── Invoice admin ── */
+.invoice-list-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px 100px;
+  align-items: center; gap: 1rem;
+  padding: 0.9rem 1rem; border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.invoice-list-item:hover { background: rgba(240,244,248,0.02); }
+.inv-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); }
+.inv-amount { font-family: var(--font-mono); color: var(--emerald-bright); font-weight: 600; }
+.inv-status-paid    { color: var(--emerald-bright); }
+.inv-status-pending { color: var(--gold); }
+.inv-status-overdue { color: var(--danger); }

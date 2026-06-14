@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-13",
+    "description": "Base de données des articles de blog — Portfolio Delano Ronald Togbé",
+    "fields": ["id","slug","theme","title","summary","content","date","author","image","link","source","type","featured","status","readTime"]
+  },
+  "articles": [
+    {
+      "id": "A001",
+      "slug": "glm-vs-glmm-guide",
+      "theme": "Méthodologie",
+      "title": "Choisir entre GLM et GLMM : guide pratique pour données en grappes",
+      "summary": "Une des questions les plus fréquentes en biostatistique appliquée : quand passer d'un modèle linéaire généralisé à sa version mixte ? Ce guide explore les critères de décision, les diagnostics et les pièges courants à travers des exemples en R.",
+      "content": "",
+      "date": "2026-01-15",
+      "author": "Delano R. Togbé",
+      "image": "",
+      "link": "",
+      "source": "original",
+      "type": "article",
+      "featured": true,
+      "status": "draft",
+      "readTime": "12 min"
+    },
+    {
+      "id": "A002",
+      "slug": "did-psm-combinaison",
+      "theme": "Méthodologie",
+      "title": "DiD et PSM : quand et comment les combiner pour l'évaluation d'impact ?",
+      "summary": "La combinaison des méthodes Difference-in-Differences et Propensity Score Matching offre une robustesse accrue pour l'identification causale. Retour d'expérience sur l'évaluation de l'impact des SHS en milieu rural.",
+      "content": "",
+      "date": "2026-02-01",
+      "author": "Delano R. Togbé",
+      "image": "",
+      "link": "",
+      "source": "original",
+      "type": "article",
+      "featured": false,
+      "status": "draft",
+      "readTime": "10 min"
+    },
+    {
+      "id": "A003",
+      "slug": "docker-r-github-actions",
+      "theme": "MLOps",
+      "title": "Déployer un modèle R avec Docker et GitHub Actions",
+      "summary": "Tutoriel pas à pas pour containeriser un pipeline d'analyse R et l'automatiser via CI/CD. De l'écriture du Dockerfile à la mise en production sur GitHub Pages.",
+      "content": "",
+      "date": "2026-03-01",
+      "author": "Delano R. Togbé",
+      "image": "",
+      "link": "",
+      "source": "original",
+      "type": "tutoriel",
+      "featured": false,
+      "status": "draft",
+      "readTime": "15 min"
+    },
+    {
+      "id": "A004",
+      "slug": "arima-bbtd-prediction",
+      "theme": "Cas d'étude",
+      "title": "Prédire la progression du BBTD : une approche ARIMA sur données longitudinales",
+      "summary": "Retour d'expérience sur l'application des modèles SARIMA pour prédire la détection de la maladie du bananier dans un contexte de petits exploitants en Afrique subsaharienne.",
+      "content": "",
+      "date": "",
+      "author": "Delano R. Togbé",
+      "image": "",
+      "link": "https://doi.org/10.1111/eea.12748",
+      "source": "external",
+      "type": "cas-etude",
+      "featured": false,
+      "status": "published",
+      "readTime": "8 min"
+    }
+  ]
+}

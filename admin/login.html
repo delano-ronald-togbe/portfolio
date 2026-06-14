@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration — Portfolio Delano R. Togbé</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+<div class="login-page">
+  <div class="login-box">
+    <div class="login-logo">dr<span>_</span>togbe<span>.R</span></div>
+    <div class="login-subtitle">Panneau d'administration</div>
+    <h2>Connexion</h2>
+
+    <div class="login-error" id="login-error">Mot de passe incorrect. Veuillez réessayer.</div>
+
+    <div class="login-form">
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" id="password" placeholder="••••••••••" autofocus>
+      </div>
+      <button class="btn btn-primary btn-full" id="login-btn">Connexion</button>
+    </div>
+
+    <div class="login-hint">
+      🔒 <strong>Mot de passe par défaut :</strong> <code>Admin2026!</code><br>
+      Changez-le immédiatement dans Paramètres → Sécurité.
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <a href="../index.html" style="font-size:0.78rem;color:var(--text-muted);">← Retour au portfolio</a>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/auth.js"></script>
+<script>
+  // Si déjà connecté, rediriger vers le dashboard
+  if (Auth.isLoggedIn()) window.location.href = 'index.html';
+
+  async function doLogin() {
+    const pwd = document.getElementById('password').value;
+    const btn = document.getElementById('login-btn');
+    const err = document.getElementById('login-error');
+
+    if (!pwd) return;
+
+    btn.textContent = 'Vérification...';
+    btn.disabled = true;
+    err.classList.remove('show');
+
+    const ok = await Auth.login(pwd);
+
+    if (ok) {
+      btn.textContent = '✓ Connexion réussie';
+      window.location.href = 'index.html';
+    } else {
+      err.classList.add('show');
+      btn.textContent = 'Connexion';
+      btn.disabled = false;
+      document.getElementById('password').value = '';
+      document.getElementById('password').focus();
+    }
+  }
+
+  document.getElementById('login-btn').addEventListener('click', doLogin);
+  document.getElementById('password').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
+</script>
+</body>
+</html>

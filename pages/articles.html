@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles & Blog — Delano R. Togbé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<style>
+  .page-header { padding: 8rem 6% 4rem; background: var(--navy-mid); border-bottom: 1px solid var(--border); }
+  .articles-page { padding: 3rem 6%; background: var(--navy); min-height: 60vh; }
+  .article-full-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md);
+    padding: 2rem; margin-bottom: 1.2rem; cursor: pointer; transition: all var(--transition);
+    display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; align-items: center;
+  }
+  .article-full-card:hover { border-color: rgba(39,174,96,0.35); transform: translateX(4px); }
+  .article-thumb { height: 120px; background: var(--navy-light); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .article-thumb img { width:100%;height:100%;object-fit:cover; }
+  @media (max-width:600px) { .article-full-card { grid-template-columns:1fr; } .article-thumb { display:none; } }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-logo"><a href="../index.html" style="color:inherit;">dr<span style="color:var(--gold)">_</span>togbe<span style="color:var(--gold)">.R</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">Profil</a></li>
+    <li><a href="../index.html#projects">Projets</a></li>
+    <li><a href="articles.html" class="active">Articles</a></li>
+    <li><a href="../index.html#rates">Honoraires</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="section-eyebrow">Blog &amp; Ressources</div>
+  <h1 class="section-title">Articles &amp; Notes d'analyse</h1>
+  <p class="section-sub">Réflexions méthodologiques, tutoriels R/Python et retours d'expérience de terrain.</p>
+  <div class="filter-bar" style="margin-bottom:0;">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="Méthodologie">Méthodologie</button>
+    <button class="filter-btn" data-filter="Tutoriel R">Tutoriel R</button>
+    <button class="filter-btn" data-filter="MLOps">MLOps</button>
+    <button class="filter-btn" data-filter="Cas d'étude">Cas d'étude</button>
+  </div>
+</div>
+
+<div class="articles-page" id="articles-page">
+  <div style="color:var(--slate);font-family:var(--font-mono);">Chargement des articles...</div>
+</div>
+
+<footer id="footer" style="background:#060D18;border-top:1px solid var(--border);padding:1.5rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+  <div class="footer-logo"><strong>Delano R. Togbé</strong> · <a href="../index.html" style="color:var(--emerald);">Portfolio</a></div>
+  <div class="footer-copy">© 2026</div>
+</footer>
+
+<script src="../assets/js/db.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+// Override pour la page articles complète
+document.addEventListener('DOMContentLoaded', async () => {
+  const articles = await DB.getAll('articles');
+  const container = document.getElementById('articles-page');
+
+  function render(filter) {
+    const visible = filter === 'all' ? articles : articles.filter(a => a.theme === filter);
+    const published = visible.filter(a => a.status === 'published');
+
+    if (!published.length) {
+      container.innerHTML = '<div style="color:var(--slate);padding:3rem;text-align:center;font-family:var(--font-mono);">Aucun article dans cette catégorie pour le moment.</div>';
+      return;
+    }
+
+    container.innerHTML = published.map(a => `
+      <div class="article-full-card" ${a.link ? `onclick="window.open('${a.link}','_blank')"` : ''}>
+        <div class="article-thumb">
+          ${a.image ? `<img src="${a.image}" alt="${a.title}">` : '<span style="color:var(--text-muted);font-size:1.5rem;">📝</span>'}
+        </div>
+        <div>
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap;">
+            <span class="tag tag-emerald">${a.theme}</span>
+            <span class="tag tag-slate">${a.type || 'article'}</span>
+            ${a.source === 'external' ? '<span class="tag tag-gold">Lien externe ↗</span>' : ''}
+          </div>
+          <h3 style="color:var(--white);font-size:1rem;font-weight:700;margin-bottom:0.5rem;line-height:1.4;">${a.title}</h3>
+          <p style="color:var(--slate);font-size:0.82rem;line-height:1.6;margin-bottom:0.8rem;">${a.summary || ''}</p>
+          <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">
+            ${a.date || 'Date non définie'} ${a.readTime ? '· ' + a.readTime : ''}
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  render('all');
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      render(this.dataset.filter);
+    });
+  });
+});
+</script>
+</body>
+</html>

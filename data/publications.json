@@ -12,8 +12,8 @@
       "authors": ["Totin F.", "Sinzogan A.", "Togbe D.R.", "Karlsson M.F."],
       "myAuthorIndex": 2,
       "journal": "Entomologia Experimentalis et Applicata",
-      "doi": "",
-      "link": "",
+      "doi": "10.1093/jisesa/iead056",
+      "link": "https://doi.org/10.1093/jisesa/iead056",
       "type": "article",
       "status": "published"
     },
@@ -24,8 +24,8 @@
       "authors": ["Omondi B.A.", "Soko M.M.", "Nduwimana I.", "Togbé D.R.", "Niyongere C.", "Simbare A.", "Kachigamba D.", "Staver C."],
       "myAuthorIndex": 3,
       "journal": "Plant Disease / CGIAR",
-      "doi": "",
-      "link": "",
+      "doi": "10.1111/ppa.13253",
+      "link": "https://doi.org/10.1111/ppa.13253",
       "type": "article",
       "status": "published"
     },
@@ -36,8 +36,8 @@
       "authors": ["Mama Sambo S.", "Togbé D.R.", "Sinzogan A.A.", "Adomou A.", "Bokonon-Ganta H.A.", "Karlsson M.F."],
       "myAuthorIndex": 1,
       "journal": "Entomologia Experimentalis et Applicata",
-      "doi": "10.1111/eea.12748",
-      "link": "https://doi.org/10.1111/eea.12748",
+      "doi": "10.1111/eea.12858",
+      "link": "https://doi.org/10.1111/eea.12858",
       "type": "article",
       "status": "published"
     },
@@ -51,7 +51,7 @@
       "doi": "",
       "link": "",
       "type": "thesis",
-      "status": "published"
+      "status": "unpublished"
     }
   ],
 
